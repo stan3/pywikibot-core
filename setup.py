@@ -127,16 +127,11 @@ else:
     test_deps += ['six']
 test_deps += extra_deps['rcstream']
 
-# late import of setuptools due to monkey-patching above
-from ez_setup import use_setuptools
-use_setuptools()
-
 from setuptools import setup, find_packages
 
 name = 'pywikibot'
-version = '2.0rc1'
+version = '2.0rc1.post2'
 github_url = 'https://github.com/wikimedia/pywikibot-core'
-download_url = github_url + '/archive/master.zip#egg=' + name + '-' + version
 
 setup(
     name=name,
@@ -153,7 +148,6 @@ setup(
     dependency_links=dependency_links,
     extras_require=extra_deps,
     url='https://www.mediawiki.org/wiki/Pywikibot',
-    download_url=download_url,
     test_suite="tests.collector",
     tests_require=test_deps,
     classifiers=[
@@ -162,7 +156,8 @@ setup(
         'Operating System :: OS Independent',
         'Intended Audience :: Developers',
         'Environment :: Console',
-        'Programming Language :: Python :: 2.7'
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
     ],
     use_2to3=False
 )
