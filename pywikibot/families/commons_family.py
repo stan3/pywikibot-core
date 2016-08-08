@@ -18,6 +18,7 @@ class Family(family.WikimediaFamily):
         self.name = 'commons'
         self.langs = {
             'commons': 'commons.wikimedia.org',
+            'beta': 'commons.wikimedia.beta.wmflabs.org',
         }
 
         self.interwiki_forward = 'wikipedia'
